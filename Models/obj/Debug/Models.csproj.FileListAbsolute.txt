@@ -1,0 +1,10 @@
+D:\THLVN\KTX\Models\bin\Debug\Models.dll.config
+D:\THLVN\KTX\Models\bin\Debug\Models.dll
+D:\THLVN\KTX\Models\bin\Debug\Models.pdb
+D:\THLVN\KTX\Models\bin\Debug\EntityFramework.dll
+D:\THLVN\KTX\Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\THLVN\KTX\Models\bin\Debug\EntityFramework.xml
+D:\THLVN\KTX\Models\bin\Debug\EntityFramework.SqlServer.xml
+D:\THLVN\KTX\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
+D:\THLVN\KTX\Models\obj\Debug\Models.dll
+D:\THLVN\KTX\Models\obj\Debug\Models.pdb
