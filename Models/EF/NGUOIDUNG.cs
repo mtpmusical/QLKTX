@@ -34,7 +34,5 @@ namespace Models.EF
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADON> HOADONs { get; set; }
-
-        public virtual PHANQUYEN PHANQUYEN { get; set; }
     }
 }

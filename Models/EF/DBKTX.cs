@@ -19,8 +19,6 @@ namespace Models.EF
         public virtual DbSet<PHONG> PHONGs { get; set; }
         public virtual DbSet<PHONGSV> PHONGSVs { get; set; }
         public virtual DbSet<SINHVIEN> SINHVIENs { get; set; }
-        public virtual DbSet<VAITRO> VAITROs { get; set; }
-        public virtual DbSet<PHANQUYEN> PHANQUYENs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -48,15 +46,6 @@ namespace Models.EF
                 .Property(e => e.MaNV)
                 .IsFixedLength();
 
-            modelBuilder.Entity<NGUOIDUNG>()
-                .HasMany(e => e.HOADONs)
-                .WithRequired(e => e.NGUOIDUNG)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<NGUOIDUNG>()
-                .HasOptional(e => e.PHANQUYEN)
-                .WithRequired(e => e.NGUOIDUNG);
-
             modelBuilder.Entity<NUOC>()
                 .Property(e => e.MaPhong)
                 .IsFixedLength();
@@ -74,17 +63,7 @@ namespace Models.EF
                 .IsFixedLength();
 
             modelBuilder.Entity<PHONG>()
-                .HasMany(e => e.DIENs)
-                .WithRequired(e => e.PHONG)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<PHONG>()
                 .HasMany(e => e.HOADONs)
-                .WithRequired(e => e.PHONG)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<PHONG>()
-                .HasMany(e => e.NUOCs)
                 .WithRequired(e => e.PHONG)
                 .WillCascadeOnDelete(false);
 
@@ -108,23 +87,6 @@ namespace Models.EF
             modelBuilder.Entity<SINHVIEN>()
                 .Property(e => e.GioiTinh)
                 .IsFixedLength();
-
-            modelBuilder.Entity<SINHVIEN>()
-                .HasMany(e => e.PHONGSVs)
-                .WithRequired(e => e.SINHVIEN)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<VAITRO>()
-                .Property(e => e.MaVT)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PHANQUYEN>()
-                .Property(e => e.MaNV)
-                .IsFixedLength();
-
-            modelBuilder.Entity<PHANQUYEN>()
-                .Property(e => e.MaVT)
-                .IsUnicode(false);
         }
     }
 }

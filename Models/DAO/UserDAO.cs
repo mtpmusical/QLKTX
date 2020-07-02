@@ -27,9 +27,29 @@ namespace Models.DAO
                 return 1;
             }
         }
+       
+        public String Insert(NGUOIDUNG entityNguoiDung)
+        {
+            db.NGUOIDUNGs.Add(entityNguoiDung);
+            db.SaveChanges();
+            return entityNguoiDung.TenDangNhap;
+        }
+        public NGUOIDUNG Find(string tenDN)
+        {
+            return db.NGUOIDUNGs.Find(tenDN);
+
+        }
+       
         public List<NGUOIDUNG> ListAll()
         {
             return db.NGUOIDUNGs.ToList();
+        }
+        public List<NGUOIDUNG> ListWhereAll(string searchString)
+        {
+            if(!string.IsNullOrEmpty(searchString))
+            return db.NGUOIDUNGs.Where(x => x.MaNV.Contains(searchString)).ToList();
+            return db.NGUOIDUNGs.ToList();
+
         }
     }
 
